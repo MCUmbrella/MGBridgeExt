@@ -1,0 +1,5 @@
+name: MGBridgeExt
+version: '${project.version}'
+main: org.example.mgbridgeext.MGBridgeExt
+api-version: 1.13
+depend: [ MGBridge ]
