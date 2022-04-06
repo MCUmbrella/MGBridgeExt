@@ -30,7 +30,7 @@ public final class MGBridgeExt extends JavaPlugin implements GuildedCommandExecu
     }
 
     @Override
-    public boolean execute(ChatMessage chatMessage, String[] strings)
+    public boolean execute(ChatMessage chatMessage, String[] args)
     {
         getLogger().info("User with ID '" + chatMessage.getCreatorId() + "' issued test command");
         instance.sendGuildedMsg("Ok", chatMessage.getId());
