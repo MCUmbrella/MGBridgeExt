@@ -11,7 +11,8 @@ It replies 'OK' when the command is executed.
 ## MGBridge
 This is MGBridge's main class. You can use `MGBridge.instance` to access what MGBridge plugin can also access.
 - `MGBridge.instance.getLogger()` returns MGBridge's Logger.
-- `MGBridge.instance.getGEventListener` returns MGBridge's Guilded event listener. You can use it to register commands.
+- `MGBridge.instance.getGEventListener()` returns MGBridge's Guilded event listener. You can use it to register commands.
+- `MGBridge.instance.sendGuildedMsg(String msg, String replyTo)` sends message to Guilded server. If you want to reply to any message, set `replyTo` to the message's ID, otherwise set that to null.
 ## BindManager
 This is MGBridge's account binding system.
 -  HashMap<String, UUID> `BindManager.bindMap` has players' bind info stored.
