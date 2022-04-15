@@ -18,6 +18,11 @@ This is MGBridge's account binding system.
 - `BindManager.saveBindMap()` saves the bind info to a file called 'bindMap.dat'.
 - `BindManager.loadBindMap()` loads bind info from the file 'bindMap.dat'.
 ## GuildedEventListener
-This class manages incoming Guilded messages, MGB commands and some other events. It must be accessed using `MGBridge.instance.getGEventListener`.
+This class manages incoming Guilded messages, MGB commands and some other events. It must be accessed using `MGBridge.instance.getGEventListener()`.
 - `registerExecutor(GuildedCommandExecutor)` register a GuildedCommandExecutor. It adds a new subcommand to MGB on the Guilded side.
 - `unregisterExecutor(String)` unregister the subcommand with the specified name.
+## interface GuildedCommandExecutor
+- String `getCommandName()` returns the subcommand's name.
+- boolean `execute(ChatMessage chatMessage, String[] args)` is what should be executed when the user enters this subcommand.
+  - ChatMessage `chatMessage` is the corresponding message's ChatMessage object.
+  - String[] `args` is the String(s) after the subcommand name, separated by spaces. For example you typed '/mgb test 123 4' and `args[]` should be {"123", "4"}
