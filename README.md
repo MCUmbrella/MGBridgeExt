@@ -29,6 +29,8 @@ This class manages incoming Guilded messages, MGB commands and some other events
 - `unregisterExecutor(String)` unregister the subcommand with the specified name.
 ## interface GuildedCommandExecutor
 - String `getCommandName()` returns the subcommand's name.
+- String `getDescription()` returns the subcommand's description.
+- String `getUsage()` returns the subcommand's usage.
 - boolean `execute(ChatMessage chatMessage, String[] args)` is what should be executed when the user enters this subcommand.
   - ChatMessage `chatMessage` is the corresponding message's ChatMessage object.
   - String[] `args` is the String(s) after the subcommand name, separated by spaces. For example you typed '/mgb test 123 4' and `args[]` should be {"123", "4"}
