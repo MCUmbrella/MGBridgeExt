@@ -7,7 +7,7 @@ import vip.floatationdevice.mgbridge.MGBridge;
 public final class MGBridgeExt extends JavaPlugin
 {
     GCommandTest testCommand = new GCommandTest();
-    static MGBridgeExt instance = new MGBridgeExt();
+    static MGBridgeExt instance = null;
 
     @Override
     public void onEnable()
