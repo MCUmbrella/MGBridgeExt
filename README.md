@@ -11,7 +11,8 @@ It replies 'OK' when the command is executed.
 ## MGBridge
 This is MGBridge's main class. You can use `MGBridge.instance` to access what MGBridge plugin can also access.
 - `MGBridge.instance.getLogger()` returns MGBridge's Logger.
-- `MGBridge.instance.getGEventListener()` returns MGBridge's Guilded event listener. You can use it to register commands.
+- `MGBridge.instance.getG4JClient()` returns the G4JClient used by the MGBridge.
+- `MGBridge.instance.getGEventListener()` returns MGBridge's Guilded event listener. You can use it to register commands (shown below).
 - `MGBridge.instance.sendGuildedMessage(String msg, String replyTo, Boolean isPrivate, Boolean isSilent)` sends message to Guilded server. 
   - If you want to reply to any message, set `replyTo` to the message's ID, otherwise set that to null.
   - If you want to privately reply to a message, set `isPrivate` to true, otherwise set that to false or null.
@@ -29,8 +30,9 @@ This class manages incoming Guilded messages, MGB commands and some other events
 - `unregisterExecutor(String)` unregister the subcommand with the specified name.
 ## interface GuildedCommandExecutor
 - String `getCommandName()` returns the subcommand's name.
-- String `getDescription()` returns the subcommand's description.
-- String `getUsage()` returns the subcommand's usage.
+- String `getCommandDescription()` returns the subcommand's description.
+- String `getCommandUsage()` returns the subcommand's usage.
 - boolean `execute(ChatMessage chatMessage, String[] args)` is what should be executed when the user enters this subcommand.
   - ChatMessage `chatMessage` is the corresponding message's ChatMessage object.
   - String[] `args` is the String(s) after the subcommand name, separated by spaces. For example you typed '/mgb test 123 4' and `args[]` should be {"123", "4"}
+  - The return value is used to represent the result of command execution, but is not currently used anywhere by MGB.
