@@ -69,7 +69,7 @@
         <dependency>
             <groupId>vip.floatationdevice</groupId>
             <artifactId>mgbridge</artifactId>
-            <version>0.9.4</version>
+            <version>0.9.5</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

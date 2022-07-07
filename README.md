@@ -1,6 +1,6 @@
-This is an external [MGBridge](https://github.com/MCUmbrella/MGBridge) command implementation.
-The command is '/mgb test', wrapped in a Bukkit plugin that requires MGBridge to be installed on the Minecraft server.
-It replies 'OK' when the command is executed.
+This contains the source code of an external [MGBridge](https://github.com/MCUmbrella/MGBridge) subcommand implementation.
+The example command is '/mgb test', wrapped in a Bukkit plugin that requires MGBridge to be installed on the Minecraft server.
+It replies 'OK' when someone sends the command '/mgb test' to the Guilded server.
 # How to create your own
 1. Clone the MGBridge's repository and run `mvn install` to install MGBridge to your local Maven repository.
 2. Create a new Maven project and add `vip.floatationdevice.mgbridge` as dependency (see this plugin's pom.xml for example).
@@ -10,6 +10,9 @@ It replies 'OK' when the command is executed.
 # Useful classes / functions:
 ## MGBridge
 This is MGBridge's main class. You can use `MGBridge.instance` to access what MGBridge plugin can also access.
+- `MGBridge.isBound(String userId)` checks if the Guilded user is bound to a Minecraft account.
+- `MGBridge.getServerId()` returns the server ID of the server that MGBridge is running on.
+- `MGBridge.getChannelId(String userId)` returns the channel ID of the channel used by MGBridge.
 - `MGBridge.instance.getLogger()` returns MGBridge's Logger.
 - `MGBridge.instance.getG4JClient()` returns the G4JClient used by the MGBridge.
 - `MGBridge.instance.getGEventListener()` returns MGBridge's Guilded event listener. You can use it to register commands (shown below).
